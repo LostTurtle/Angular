@@ -10,8 +10,14 @@ export class TodoListComponent implements OnInit {
 
   constructor(private todosService: TodosService) { }
 
+  get todos () {
+    return this.todosService.todos;
+  }
+
   ngOnInit(): void {
-    this.todosService.fetchTodos()
+    if (this.todos.length == 0) {
+      this.todosService.fetchTodos()
+    }
   }
 
 
@@ -54,8 +60,4 @@ export class TodoListComponent implements OnInit {
   //   }
   //   console.log(todoIndex)
   // }
-
-  get todos () {
-    return this.todosService.todos;
-  }
 }

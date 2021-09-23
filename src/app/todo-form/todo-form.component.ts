@@ -23,9 +23,11 @@ export class TodoFormComponent implements OnInit {
       completed: false
     }
     // this.creatingTodo.emit(todo)
-    this.todosService.addNewTodo(todo)
+    
     if (this.todoTitle === ''){
-      console.log('error')
+      alert('please enter todo')
+    } else {
+      this.todosService.addNewTodo(todo)
     }
     this.todoTitle = ''
   }

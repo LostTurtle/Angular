@@ -8,12 +8,24 @@ import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
+import { HomeComponent } from './views/home/home.component';
+import { NotfoundComponent } from './views/notfound/notfound.component';
+import { SigninComponent } from './views/auth/signin/signin.component';
+import { SignupComponent } from './views/auth/signup/signup.component';
+import { DefaultBarComponent } from './components/bar/default-bar/default-bar.component';
+import { DefaultFooterComponent } from './components/footer/default-footer/default-footer.component';
 @NgModule({
   declarations: [
     AppComponent,
     TodoListComponent,
     TodoListItemComponent,
     TodoFormComponent,
+    HomeComponent,
+    NotfoundComponent,
+    SigninComponent,
+    SignupComponent,
+    DefaultBarComponent,
+    DefaultFooterComponent,
   ],
   imports: [
     BrowserModule,
