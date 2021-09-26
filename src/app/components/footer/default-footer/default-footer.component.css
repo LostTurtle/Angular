@@ -1,0 +1,16 @@
+footer {
+    background-color: #1A1C27;
+    color: #fff;
+    text-align: center;
+    padding: 17px 0 1px 0;
+    font-size: 0.8rem;
+}
+
+footer span:first-of-type {
+    border-left: 1px solid #fff;
+    padding-left: 5px;
+}
+
+footer span:last-of-type {
+    color: #FFCB0F;
+}

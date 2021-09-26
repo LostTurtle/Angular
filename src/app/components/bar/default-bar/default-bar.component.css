@@ -1,0 +1,96 @@
+header {
+    background-color: #FFCB0F;
+    font-size: 0.9rem;
+    color: #000;
+}
+
+header .row div:nth-child(1) span {
+    margin-right: 10px;
+}
+
+header .row div:last-of-type span {
+    margin-left: 10px;
+}
+
+header .row div:last-of-type span a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* ------------------------------------section-0----------------------------------- */
+
+/* #sec-0 {
+    background:linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)), 
+        url('../images/banner.jpg') no-repeat center center;
+    background-size: cover;
+} */
+
+#sec-0 .bg-dark {
+    background-color: #222533 !important;
+}
+
+#sec-0 nav .navbar-brand {
+    font-style: italic;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+#sec-0 nav .navbar-brand span:nth-child(1) {
+    color: #FFCB0F;
+}
+
+#sec-0 nav .nav-item:last-child .nav-link {
+    color: #FFCB0F;
+}
+
+#sec-0 nav .navbar-brand span:nth-child(2) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #9D9D9E;
+    margin-top: 0;
+}
+
+#sec-0 nav {
+    margin-bottom: 150px;
+}
+
+
+#sec-0 nav+div>div:last-of-type {
+    margin-top: 65px;
+}
+
+#margin {
+    padding-bottom: 300px;
+}
+
+#margin a {
+    border: 1px solid #FFCB0F;
+    background-color: #000;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: #FFCB0F;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}
+
+#sec-0 nav+div .row div h1:first-of-type, #sec-0 nav+div .row div h5 {
+    color: #FFF;
+}
+
+#sec-0 nav+div .row div h1:first-of-type {
+    /* line-height: 15px; */
+    margin-top: 30px;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+#sec-0 nav+div .row div h1:last-of-type {
+    color: #FFCB0F;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+#sec-0 nav+div .row div p:first-of-type {
+    color: #FFF;
+}
