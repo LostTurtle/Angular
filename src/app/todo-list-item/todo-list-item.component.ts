@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit,Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import {TODO, defaultTodo} from '../interfaces/todos.interface'
 import { TodosService } from '../services/todos.service';
 
 @Component({
@@ -8,17 +9,15 @@ import { TodosService } from '../services/todos.service';
 })
 export class TodoListItemComponent implements OnInit {
 
-  @Input() todoData: {title: string, id: number, completed: boolean} = {title:'', id: new Date().getTime(), completed: false};
+  @Input() todo: TODO = defaultTodo;
   // @Output() itemClicked = new EventEmitter();
 
   constructor(private todosService: TodosService) { }
 
   ngOnInit(): void {
   }
-
-  deleteItem() {
-    // this.itemClicked.emit(this.todoData.id)
-    this.todosService.removeTodo(this.todoData.id)
+  deleteItem () {
+    this.todosService.deleteTodo(this.todo._id);
   }
 
 }

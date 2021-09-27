@@ -1,1 +1,12 @@
-<li>{{todoData.title}} <button (click)="deleteItem()">Remove Todo</button> </li>
+<!-- <li>{{todoData.title}} <button (click)="deleteItem()">Remove Todo</button> </li> -->
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"> {{todo.title}} </h5>
+      <p class="card-text">{{todo.content}}</p>
+      <div class="d-flex justify-content-around align-items-center">
+          <!-- <button class="btn btn-primary">View</button> -->
+          <button class="btn btn-success" [routerLink]="'/form/' + todo._id" >Edit</button>
+          <button  (click)="deleteItem()" class="btn text-danger">Delete</button>
+      </div>
+    </div>
+</div>

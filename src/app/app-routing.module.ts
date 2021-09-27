@@ -4,6 +4,7 @@ import { SigninComponent } from './views/auth/signin/signin.component';
 import { SignupComponent } from './views/auth/signup/signup.component';
 import { HomeComponent } from './views/home/home.component';
 import { NotfoundComponent } from './views/notfound/notfound.component';
+import {TodoFormComponent} from './todo-form/todo-form.component'
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'signin',
     component: SigninComponent
+  },
+  {
+    path: 'form/:id',
+    component: TodoFormComponent
   },
   {
     path: '**',

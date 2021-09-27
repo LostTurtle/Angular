@@ -14,6 +14,7 @@ import { SigninComponent } from './views/auth/signin/signin.component';
 import { SignupComponent } from './views/auth/signup/signup.component';
 import { DefaultBarComponent } from './components/bar/default-bar/default-bar.component';
 import { DefaultFooterComponent } from './components/footer/default-footer/default-footer.component';
+import { ActionBarComponent } from './components/bar/action-bar/action-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { DefaultFooterComponent } from './components/footer/default-footer/defau
     SignupComponent,
     DefaultBarComponent,
     DefaultFooterComponent,
+    ActionBarComponent,
   ],
   imports: [
     BrowserModule,

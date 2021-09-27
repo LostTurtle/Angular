@@ -1,4 +1,5 @@
-import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute} from '@angular/router';
 import { TodosService } from '../services/todos.service';
 
 @Component({
@@ -10,26 +11,59 @@ export class TodoFormComponent implements OnInit {
 
   // @Output() creatingTodo = new EventEmitter();
 
-  constructor(private todosService: TodosService) { }
+  constructor(private todosService: TodosService, private route: ActivatedRoute) { }
+
+  editMode: boolean = false;
+  id: string = ''
   todoTitle = ''
+  content: string = ''
+  completed: boolean = false
+
+  get errors() {
+    return this.todosService.errors
+  }
 
   ngOnInit(): void {
+    const idParams =this.route.snapshot.params.id;
+    if (idParams != 'new') {
+      this.editMode = true;
+      this.id = idParams;
+      const todo = this.todosService.getTodoById(this.id)
+      if(!todo) return;
+      this.todoTitle = todo.title
+      this.content = todo.content
+    }
   }
 
-  createTodo() {
-    const todo = {
+  submit () {
+    const data = {
       title: this.todoTitle,
-      id: new Date().getTime(),
-      completed: false
+      content: this.content,
+      completed: this.completed
     }
-    // this.creatingTodo.emit(todo)
-    
-    if (this.todoTitle === ''){
-      alert('please enter todo')
+    if (!this.editMode) {
+      this.todosService.createTodo(data);
     } else {
-      this.todosService.addNewTodo(todo)
+      this.todosService.updateTodo(this.id, data)
     }
-    this.todoTitle = ''
-  }
+  };
+
+
+
+  // createTodo() {
+  //   const todo = {
+  //     title: this.todoTitle,
+  //     id: new Date().getTime(),
+  //     completed: false
+  //   }
+  //   // this.creatingTodo.emit(todo)
+    
+  //   if (this.todoTitle === ''){
+  //     alert('please enter todo')
+  //   } else {
+  //     this.todosService.addNewTodo(todo)
+  //   }
+  //   this.todoTitle = ''
+  // }
 
 }

@@ -63,11 +63,14 @@
                   <li class="nav-item">
                       <a class="nav-link" aria-current="page" routerLink="#">Components</a>
                   </li>
-                  <li class="nav-item">
-                      <a class="nav-link" routerLink="/signin">Signin</a>
+                  <li class="nav-item" *ngIf="!userLoggedIn">
+                    <a class="nav-link" routerLink="/signin">Signin</a>
                   </li>
-                  <li class="nav-item">
-                      <a class="nav-link" routerLink="/signup">Signup</a>
+                  <li class="nav-item" *ngIf="!userLoggedIn">
+                    <a class="nav-link" routerLink="/signup">Signup</a>
+                  </li>
+                  <li class="nav-item" *ngIf="userLoggedIn">
+                    <a class="nav-link" (click)="signout()" >Sign out</a>
                   </li>
               </ul>
           </div>
